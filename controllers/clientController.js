@@ -24,7 +24,7 @@ const upload = multer({ storage: storage }).single("file");
 
 // sign up function
 const clientSignUp = async (req, res) => {
-  const { userName, email, password, affiliate } = req.body;
+  const { userName, email, password, affiliate, file } = req.body;
   const profilePicture = req.file.path;
 
   await bcrypt.hash(password, saltRounds).then(function (hash) {
